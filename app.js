@@ -23,6 +23,9 @@ function paintGreeting(username) {
   have a nice day!`;
   // greeting.innerText = "Hello " + username;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  // greeting.style.color = 'blue';
+  console.log(greeting.innerText);
+  console.log(username);
 }
 
 //USERNAME_KEY = username = savedUsername
