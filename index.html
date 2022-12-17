@@ -5,13 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
+    <!--Google Font: font-family: 'PT Serif', serif;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:ital@1&family=Noto+Serif:ital@1&family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Momentum App</title>
   </head>
   <body>
-    <div id="login-form">
-      <input type="text" placeholder="What is your name?" />
-      <button>LogIn</button>
-    </div>
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input type="submit" value="LogIn" />
+    </form>
+
+    <h1 id="greeting" class="hidden"></h1>
+
+    <a href="https://velog.io/@ceciliaran" target="_blank"
+      >Go to 🌼cecilia.log🌼</a
+    >
 
     <script src="./app.js"></script>
   </body>

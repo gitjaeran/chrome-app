@@ -1,0 +1,13 @@
+h1 {
+  font-family: "PT Serif", serif;
+  font-style: italic;
+  font-size: 60px;
+}
+
+a {
+  font-family: "Inconsolata", monospace;
+}
+
+.hidden {
+  display: none;
+}
