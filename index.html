@@ -14,7 +14,9 @@
 
     <title>Momentum App</title>
   </head>
+
   <body>
+    <!--Login-->
     <form id="login-form" class="hidden">
       <input
         required
@@ -25,12 +27,22 @@
       <input type="submit" value="LogIn" />
     </form>
 
+    <!--Greeting-->
     <h1 id="greeting" class="hidden"></h1>
 
+    <!--Todo List-->
+    <form id="todo-form">
+      <input type="text" placeholder="Write a Todo and Press Enter!" required />
+    </form>
+    <ul id="todo-list"></ul>
+
+    <!--Quote-->
     <div id="quote">
       <span></span>
       <span></span>
     </div>
+
+    <!--Clock-->
     <h2 id="clock">00:00:00</h2>
 
     <a href="https://velog.io/@ceciliaran" target="_blank"
@@ -41,5 +53,6 @@
     <script src="/js/clock.js"></script>
     <script src="/js/quotes.js"></script>
     <script src="/js/background.js"></script>
+    <script src="/js/todo.js"></script>
   </body>
 </html>
