@@ -2,6 +2,12 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+const toDos = [];
+
+function saveToDos() {
+  localStorage.setItem("todos", JSON.stringify(toDos)); //JSON.stringify(): string으로 변환
+}
+
 //click btn -> todolist > li delete
 function deleteTodo(event) {
   const li = event.target.parentElement;
@@ -9,18 +15,15 @@ function deleteTodo(event) {
 }
 
 function paintToDo(newTodo) {
-  //li tag 생성
-  const li = document.createElement("li");
-  //span tag 생성
-  const span = document.createElement("span");
+  const li = document.createElement("li"); //li tag 생성
+  const span = document.createElement("span"); //span tag 생성
 
   //span에 text 넣음 = newTodo는 유저가 form에서 작성한 값
   span.innerText = newTodo;
 
   //button 생성
   const button = document.createElement("button");
-  //button text 변경
-  button.innerText = "❌";
+  button.innerText = "❌"; //button text 변경
   //button click event
   button.addEventListener("click", deleteTodo);
 
@@ -39,7 +42,14 @@ function handelToDoSubmit(event) {
   const newTodo = toDoInput.value;
   toDoInput.value = "";
 
+  //push – 요소를 스택 끝에 집어넣음
+  toDos.push(newTodo);
+
+  //화면에 띄움
   paintToDo(newTodo);
+
+  //toDos array를 localStorage에 넣음
+  saveToDos();
 }
 
 toDoForm.addEventListener("submit", handelToDoSubmit);
