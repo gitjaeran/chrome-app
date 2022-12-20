@@ -14,14 +14,19 @@ function saveToDos() {
 function deleteTodo(event) {
   const li = event.target.parentElement;
   li.remove();
+  //filter() -> 클릭한 li.id와 다른 toDo는 남김
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); //parseInt(): 문자열로 변환
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
   const li = document.createElement("li"); //li tag 생성
+  li.id = newTodo.id;
+
   const span = document.createElement("span"); //span tag 생성
 
   //span에 text 넣음 = newTodo는 유저가 form에서 작성한 값
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
 
   //button 생성
   const button = document.createElement("button");
@@ -44,11 +49,16 @@ function handelToDoSubmit(event) {
   const newTodo = toDoInput.value;
   toDoInput.value = "";
 
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+
   //push – 요소를 스택 끝에 집어넣음
-  toDos.push(newTodo);
+  toDos.push(newTodoObj);
 
   //화면에 띄움
-  paintToDo(newTodo);
+  paintToDo(newTodoObj);
 
   //toDos array를 localStorage에 넣음
   saveToDos();
@@ -62,3 +72,5 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 }
+
+function delFilter() {}
