@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
 
-    <!--Google Font: 'Fira Mono', 'IBM Plex Sans KR', 'Open Sans', 'PT Serif-->
+    <!--Google Font: 'Fira Mono', 'IBM Plex Sans KR', 'Open Sans', 'PT Serif', 'Noto Sans'-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=IBM+Plex+Sans+KR:wght@300;400;500&family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=IBM+Plex+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@500&family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
 
@@ -16,49 +16,64 @@
   </head>
 
   <body>
-    <!--Login-->
-    <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="LogIn" />
-    </form>
+    <div class="body">
+      <!--Weather-->
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
 
-    <!--Greeting-->
-    <h1 id="greeting" class="hidden"></h1>
+      <!--Login-->
+      <form id="login-form" class="hidden">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <input type="submit" value="LogIn" />
+      </form>
 
-    <!--Todo List-->
-    <form id="todo-form">
-      <input type="text" placeholder="Write a Todo and Press Enter!" required />
-    </form>
-    <ul id="todo-list"></ul>
+      <!--Greeting-->
+      <div id="greeting" class="hidden"></div>
 
-    <!--Quote-->
-    <div id="quote">
-      <span></span>
-      <span></span>
+      <!--Clock-->
+      <h1 id="clock">00:00:00</h1>
+
+      <div class="todo">
+        <div class="link">
+          <a id="velog" href="https://velog.io/@ceciliaran" target="_blank"
+            >Go to 🌼cecilia.log🌼</a
+          >
+          <a id="GitHub" href="https://github.com/gitjaeran" target="_blank"
+            >Go to 😺GitHub😺</a
+          >
+          <a id="mdn" href="https://developer.mozilla.org/ko/" target="_blank"
+            >Go to 🔎MDN🔎</a
+          >
+          <a id="nomad" href="https://nomadcoders.co/dashboard" target="_blank"
+            >Go to ✨Nomad Dashboard✨</a
+          >
+        </div>
+        <!--Todo List-->
+        <div class="todolist">
+          <form id="todo-form">
+            <input type="text" placeholder="🎁 Write a Todo!" required />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+      </div>
+
+      <!--Quote-->
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
     </div>
-
-    <!--Clock-->
-    <h2 id="clock">00:00:00</h2>
-
-    <!--Weather-->
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- <a href="https://velog.io/@ceciliaran" target="_blank"
-      >Go to 🌼cecilia.log🌼</a
-    > -->
-
+    <script src="/js/background.js"></script>
     <script src="/js/greetings.js"></script>
     <script src="/js/clock.js"></script>
     <script src="/js/quotes.js"></script>
-    <script src="/js/background.js"></script>
     <script src="/js/todo.js"></script>
     <script src="/js/weather.js"></script>
   </body>
